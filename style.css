@@ -1,0 +1,49 @@
+body {
+    font-family: 'Inter', sans-serif;
+    /* Apply a gradient background from the provided image colors */
+    background: linear-gradient(135deg, #C1C8E4 0%, #84CEEB 50%, #5AB9EA 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+/* Simple spinner animation (though not used directly for this version, kept for general style) */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    /* Match spinner color to one of the blues from the palette */
+    border-left-color: #5AB9EA; /* Using #5AB9EA for the spinner color */
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+/* Pulsating dot animation */
+@keyframes pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+}
+.pulsating-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2563EB; /* A blue shade for the dot */
+    border-radius: 50%;
+    animation: pulse 1.5s infinite ease-in-out;
+}
