@@ -1,3 +1,5 @@
+// script.js
+
 // Define grams per troy ounce for conversion
 const GRAMS_PER_TROY_OUNCE = 31.1035;
 
@@ -9,7 +11,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'United States'
+        displayName: { en: 'United States', ar: 'الولايات المتحدة' }
     },
     'canada': {
         currency: 'CAD',
@@ -17,7 +19,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.37,
         defaultTax: 5,
-        displayName: 'Canada'
+        displayName: { en: 'Canada', ar: 'كندا' }
     },
     'uae': {
         currency: 'AED',
@@ -25,7 +27,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3.67,
         defaultTax: 5,
-        displayName: 'UAE'
+        displayName: { en: 'UAE', ar: 'الإمارات العربية المتحدة' }
     },
     'india': {
         currency: 'INR',
@@ -33,7 +35,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 83.00,
         defaultTax: 3,
-        displayName: 'India'
+        displayName: { en: 'India', ar: 'الهند' }
     },
     'united-kingdom': {
         currency: 'GBP',
@@ -41,7 +43,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.78,
         defaultTax: 20,
-        displayName: 'United Kingdom'
+        displayName: { en: 'United Kingdom', ar: 'المملكة المتحدة' }
     },
     'europe': { // Represents Eurozone
         currency: 'EUR',
@@ -49,7 +51,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 20,
-        displayName: 'Europe (Eurozone)'
+        displayName: { en: 'Europe (Eurozone)', ar: 'أوروبا (منطقة اليورو)' }
     },
     'china': {
         currency: 'CNY',
@@ -57,7 +59,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 7.25,
         defaultTax: 13,
-        displayName: 'China'
+        displayName: { en: 'China', ar: 'الصين' }
     },
     'japan': {
         currency: 'JPY',
@@ -65,7 +67,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 160.00,
         defaultTax: 10,
-        displayName: 'Japan'
+        displayName: { en: 'Japan', ar: 'اليابان' }
     },
     'australia': {
         currency: 'AUD',
@@ -73,7 +75,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.50,
         defaultTax: 10,
-        displayName: 'Australia'
+        displayName: { en: 'Australia', ar: 'أستراليا' }
     },
     'south-africa': {
         currency: 'ZAR',
@@ -81,7 +83,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 18.00,
         defaultTax: 15,
-        displayName: 'South Africa'
+        displayName: { en: 'South Africa', ar: 'جنوب أفريقيا' }
     },
     'saudi-arabia': {
         currency: 'SAR',
@@ -89,7 +91,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3.75,
         defaultTax: 15,
-        displayName: 'Saudi Arabia'
+        displayName: { en: 'Saudi Arabia', ar: 'المملكة العربية السعودية' }
     },
     'singapore': {
         currency: 'SGD',
@@ -97,7 +99,7 @@ const countryData = {
         basePriceTroyOroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.35,
         defaultTax: 9,
-        displayName: 'Singapore'
+        displayName: { en: 'Singapore', ar: 'سنغافورة' }
     },
     'hong-kong': {
         currency: 'HKD',
@@ -105,7 +107,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 7.80,
         defaultTax: 0,
-        displayName: 'Hong Kong'
+        displayName: { en: 'Hong Kong', ar: 'هونغ كونغ' }
     },
     'switzerland': {
         currency: 'CHF',
@@ -113,7 +115,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.90,
         defaultTax: 8.1,
-        displayName: 'Switzerland'
+        displayName: { en: 'Switzerland', ar: 'سويسرا' }
     },
     'turkey': {
         currency: 'TRY',
@@ -121,7 +123,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 32.5,
         defaultTax: 20,
-        displayName: 'Turkey'
+        displayName: { en: 'Turkey', ar: 'تركيا' }
     },
     'mexico': {
         currency: 'MXN',
@@ -129,7 +131,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 18.5,
         defaultTax: 16,
-        displayName: 'Mexico'
+        displayName: { en: 'Mexico', ar: 'المكسيك' }
     },
     'brazil': {
         currency: 'BRL',
@@ -137,7 +139,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 5.40,
         defaultTax: 18,
-        displayName: 'Brazil'
+        displayName: { en: 'Brazil', ar: 'البرازيل' }
     },
     'egypt': {
         currency: 'EGP',
@@ -145,7 +147,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 47.5,
         defaultTax: 14,
-        displayName: 'Egypt'
+        displayName: { en: 'Egypt', ar: 'مصر' }
     },
     'pakistan': {
         currency: 'PKR',
@@ -153,7 +155,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 278.0,
         defaultTax: 18,
-        displayName: 'Pakistan'
+        displayName: { en: 'Pakistan', ar: 'باكستان' }
     },
     'indonesia': {
         currency: 'IDR',
@@ -161,7 +163,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 16400,
         defaultTax: 11,
-        displayName: 'Indonesia'
+        displayName: { en: 'Indonesia', ar: 'إندونيسيا' }
     },
     'thailand': {
         currency: 'THB',
@@ -169,7 +171,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 36.7,
         defaultTax: 7,
-        displayName: 'Thailand'
+        displayName: { en: 'Thailand', ar: 'تايلاند' }
     },
     'south-korea': {
         currency: 'KRW',
@@ -177,7 +179,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1380,
         defaultTax: 10,
-        displayName: 'South Korea'
+        displayName: { en: 'South Korea', ar: 'كوريا الجنوبية' }
     },
     'new-zealand': {
         currency: 'NZD',
@@ -185,7 +187,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.63,
         defaultTax: 15,
-        displayName: 'New Zealand'
+        displayName: { en: 'New Zealand', ar: 'نيوزيلندا' }
     },
     'qatar': {
         currency: 'QAR',
@@ -193,7 +195,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3.64,
         defaultTax: 0,
-        displayName: 'Qatar'
+        displayName: { en: 'Qatar', ar: 'قطر' }
     },
     'kuwait': {
         currency: 'KWD',
@@ -201,7 +203,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.306,
         defaultTax: 0,
-        displayName: 'Kuwait'
+        displayName: { en: 'Kuwait', ar: 'الكويت' }
     },
     'bahrain': {
         currency: 'BHD',
@@ -209,7 +211,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.377,
         defaultTax: 5,
-        displayName: 'Bahrain'
+        displayName: { en: 'Bahrain', ar: 'البحرين' }
     },
     'oman': {
         currency: 'OMR',
@@ -217,7 +219,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.385,
         defaultTax: 5,
-        displayName: 'Oman'
+        displayName: { en: 'Oman', ar: 'عمان' }
     },
     'malaysia': {
         currency: 'MYR',
@@ -225,7 +227,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 4.70,
         defaultTax: 6,
-        displayName: 'Malaysia'
+        displayName: { en: 'Malaysia', ar: 'ماليزيا' }
     },
     'vietnam': {
         currency: 'VND',
@@ -233,7 +235,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 25400,
         defaultTax: 10,
-        displayName: 'Vietnam'
+        displayName: { en: 'Vietnam', ar: 'فيتنام' }
     },
     'argentina': {
         currency: 'ARS',
@@ -241,7 +243,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 900.00,
         defaultTax: 21,
-        displayName: 'Argentina'
+        displayName: { en: 'Argentina', ar: 'الأرجنتين' }
     },
     'colombia': {
         currency: 'COP',
@@ -249,7 +251,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 4000.00,
         defaultTax: 19,
-        displayName: 'Colombia'
+        displayName: { en: 'Colombia', ar: 'كولومبيا' }
     },
     'nigeria': {
         currency: 'NGN',
@@ -257,7 +259,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1500.00,
         defaultTax: 7.5,
-        displayName: 'Nigeria'
+        displayName: { en: 'Nigeria', ar: 'نيجيريا' }
     },
     'kenya': {
         currency: 'KES',
@@ -265,7 +267,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 130.00,
         defaultTax: 16,
-        displayName: 'Kenya'
+        displayName: { en: 'Kenya', ar: 'كينيا' }
     },
     'afghanistan': {
         currency: 'AFN',
@@ -273,7 +275,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 70.00,
         defaultTax: 0,
-        displayName: 'Afghanistan'
+        displayName: { en: 'Afghanistan', ar: 'أفغانستان' }
     },
     'albania': {
         currency: 'ALL',
@@ -281,7 +283,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 95.00,
         defaultTax: 20,
-        displayName: 'Albania'
+        displayName: { en: 'Albania', ar: 'ألبانيا' }
     },
     'algeria': {
         currency: 'DZD',
@@ -289,7 +291,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 135.00,
         defaultTax: 19,
-        displayName: 'Algeria'
+        displayName: { en: 'Algeria', ar: 'الجزائر' }
     },
     'american-samoa': {
         currency: 'USD',
@@ -297,7 +299,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'American Samoa'
+        displayName: { en: 'American Samoa', ar: 'ساموا الأمريكية' }
     },
     'andorra': {
         currency: 'EUR',
@@ -305,7 +307,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 4.5,
-        displayName: 'Andorra'
+        displayName: { en: 'Andorra', ar: 'أندورا' }
     },
     'angola': {
         currency: 'AOA',
@@ -313,7 +315,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 820.00,
         defaultTax: 10,
-        displayName: 'Angola'
+        displayName: { en: 'Angola', ar: 'أنغولا' }
     },
     'anguilla': {
         currency: 'XCD',
@@ -321,7 +323,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.70,
         defaultTax: 0,
-        displayName: 'Anguilla'
+        displayName: { en: 'Anguilla', ar: 'أنغويلا' }
     },
     'antigua-and-barbuda': {
         currency: 'XCD',
@@ -329,7 +331,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.70,
         defaultTax: 15,
-        displayName: 'Antigua and Barbuda'
+        displayName: { en: 'Antigua and Barbuda', ar: 'أنتيغوا وباربودا' }
     },
     'armenia': {
         currency: 'AMD',
@@ -337,7 +339,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 385.00,
         defaultTax: 20,
-        displayName: 'Armenia'
+        displayName: { en: 'Armenia', ar: 'أرمينيا' }
     },
     'aruba': {
         currency: 'AWG',
@@ -345,7 +347,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.80,
         defaultTax: 0,
-        displayName: 'Aruba'
+        displayName: { en: 'Aruba', ar: 'أروبا' }
     },
     'austria': {
         currency: 'EUR',
@@ -353,7 +355,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 20,
-        displayName: 'Austria'
+        displayName: { en: 'Austria', ar: 'النمسا' }
     },
     'azerbaijan': {
         currency: 'AZN',
@@ -361,7 +363,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.70,
         defaultTax: 18,
-        displayName: 'Azerbaijan'
+        displayName: { en: 'Azerbaijan', ar: 'أذربيجان' }
     },
     'bahamas': {
         currency: 'BSD',
@@ -369,7 +371,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 12,
-        displayName: 'Bahamas'
+        displayName: { en: 'Bahamas', ar: 'جزر البهاما' }
     },
     'bangladesh': {
         currency: 'BDT',
@@ -377,7 +379,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 110.00,
         defaultTax: 15,
-        displayName: 'Bangladesh'
+        displayName: { en: 'Bangladesh', ar: 'بنغلاديش' }
     },
     'barbados': {
         currency: 'BBD',
@@ -385,7 +387,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.00,
         defaultTax: 17.5,
-        displayName: 'Barbados'
+        displayName: { en: 'Barbados', ar: 'بربادوس' }
     },
     'belarus': {
         currency: 'BYN',
@@ -393,7 +395,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3.20,
         defaultTax: 20,
-        displayName: 'Belarus'
+        displayName: { en: 'Belarus', ar: 'بيلاروسيا' }
     },
     'belgium': {
         currency: 'EUR',
@@ -401,7 +403,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 21,
-        displayName: 'Belgium'
+        displayName: { en: 'Belgium', ar: 'بلجيكا' }
     },
     'belize': {
         currency: 'BZD',
@@ -409,7 +411,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.00,
         defaultTax: 12.5,
-        displayName: 'Belize'
+        displayName: { en: 'Belize', ar: 'بليز' }
     },
     'benin': {
         currency: 'XOF',
@@ -417,7 +419,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 18,
-        displayName: 'Benin'
+        displayName: { en: 'Benin', ar: 'بنين' }
     },
     'bermuda': {
         currency: 'BMD',
@@ -425,7 +427,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'Bermuda'
+        displayName: { en: 'Bermuda', ar: 'برمودا' }
     },
     'bhutan': {
         currency: 'BTN',
@@ -433,7 +435,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 83.00,
         defaultTax: 0,
-        displayName: 'Bhutan'
+        displayName: { en: 'Bhutan', ar: 'بوتان' }
     },
     'bolivia': {
         currency: 'BOB',
@@ -441,7 +443,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 6.90,
         defaultTax: 13,
-        displayName: 'Bolivia'
+        displayName: { en: 'Bolivia', ar: 'بوليفيا' }
     },
     'bonaire-sint-eustatius-saba': {
         currency: 'USD',
@@ -449,7 +451,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'Bonaire, Sint Eustatius and Saba'
+        displayName: { en: 'Bonaire, Sint Eustatius and Saba', ar: 'بونير وسينت أوستاتيوس وسابا' }
     },
     'bosnia-and-herzegovina': {
         currency: 'BAM',
@@ -457,7 +459,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.80,
         defaultTax: 17,
-        displayName: 'Bosnia and Herzegovina'
+        displayName: { en: 'Bosnia and Herzegovina', ar: 'البوسنة والهرسك' }
     },
     'botswana': {
         currency: 'BWP',
@@ -465,7 +467,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 13.50,
         defaultTax: 14,
-        displayName: 'Botswana'
+        displayName: { en: 'Botswana', ar: 'بوتسوانا' }
     },
     'brunei-darussalam': {
         currency: 'BND',
@@ -473,7 +475,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.35,
         defaultTax: 0,
-        displayName: 'Brunei Darussalam'
+        displayName: { en: 'Brunei Darussalam', ar: 'بروناي دار السلام' }
     },
     'bulgaria': {
         currency: 'BGN',
@@ -481,7 +483,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.80,
         defaultTax: 20,
-        displayName: 'Bulgaria'
+        displayName: { en: 'Bulgaria', ar: 'بلغاريا' }
     },
     'burkina-faso': {
         currency: 'XOF',
@@ -489,7 +491,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 18,
-        displayName: 'Burkina Faso'
+        displayName: { en: 'Burkina Faso', ar: 'بوركينا فاسو' }
     },
     'burundi': {
         currency: 'BIF',
@@ -497,7 +499,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2800.00,
         defaultTax: 18,
-        displayName: 'Burundi'
+        displayName: { en: 'Burundi', ar: 'بوروندي' }
     },
     'cabo-verde': {
         currency: 'CVE',
@@ -505,7 +507,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 100.00,
         defaultTax: 15,
-        displayName: 'Cabo Verde'
+        displayName: { en: 'Cabo Verde', ar: 'الرأس الأخضر' }
     },
     'cambodia': {
         currency: 'KHR',
@@ -513,7 +515,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 4100.00,
         defaultTax: 10,
-        displayName: 'Cambodia'
+        displayName: { en: 'Cambodia', ar: 'كمبوديا' }
     },
     'cameroon': {
         currency: 'XAF',
@@ -521,7 +523,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 19.25,
-        displayName: 'Cameroon'
+        displayName: { en: 'Cameroon', ar: 'الكاميرون' }
     },
     'cayman-islands': {
         currency: 'KYD',
@@ -529,7 +531,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.82,
         defaultTax: 0,
-        displayName: 'Cayman Islands'
+        displayName: { en: 'Cayman Islands', ar: 'جزر كايمان' }
     },
     'central-african-republic': {
         currency: 'XAF',
@@ -537,7 +539,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 19,
-        displayName: 'Central African Republic'
+        displayName: { en: 'Central African Republic', ar: 'جمهورية أفريقيا الوسطى' }
     },
     'chad': {
         currency: 'XAF',
@@ -545,7 +547,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 18,
-        displayName: 'Chad'
+        displayName: { en: 'Chad', ar: 'تشاد' }
     },
     'chile': {
         currency: 'CLP',
@@ -553,7 +555,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 950.00,
         defaultTax: 19,
-        displayName: 'Chile'
+        displayName: { en: 'Chile', ar: 'تشيلي' }
     },
     'comoros': {
         currency: 'KMF',
@@ -561,7 +563,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 450.00,
         defaultTax: 0,
-        displayName: 'Comoros'
+        displayName: { en: 'Comoros', ar: 'جزر القمر' }
     },
     'congo': {
         currency: 'CDF',
@@ -569,7 +571,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2800.00,
         defaultTax: 16,
-        displayName: 'Congo'
+        displayName: { en: 'Congo', ar: 'الكونغو' }
     },
     'democratic-republic-of-the-congo': {
         currency: 'CDF',
@@ -577,7 +579,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2800.00,
         defaultTax: 16,
-        displayName: 'Democratic Republic of the Congo'
+        displayName: { en: 'Democratic Republic of the Congo', ar: 'جمهورية الكونغو الديمقراطية' }
     },
     'cook-islands': {
         currency: 'NZD',
@@ -585,7 +587,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.63,
         defaultTax: 15,
-        displayName: 'Cook Islands'
+        displayName: { en: 'Cook Islands', ar: 'جزر كوك' }
     },
     'costa-rica': {
         currency: 'CRC',
@@ -593,7 +595,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 520.00,
         defaultTax: 13,
-        displayName: 'Costa Rica'
+        displayName: { en: 'Costa Rica', ar: 'كوستاريكا' }
     },
     'croatia': {
         currency: 'EUR',
@@ -601,7 +603,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 25,
-        displayName: 'Croatia'
+        displayName: { en: 'Croatia', ar: 'كرواتيا' }
     },
     'cuba': {
         currency: 'CUP',
@@ -609,7 +611,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 24.00,
         defaultTax: 0,
-        displayName: 'Cuba'
+        displayName: { en: 'Cuba', ar: 'كوبا' }
     },
     'curaçao': {
         currency: 'ANG',
@@ -617,7 +619,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.80,
         defaultTax: 9,
-        displayName: 'Curaçao'
+        displayName: { en: 'Curaçao', ar: 'كوراساو' }
     },
     'cyprus': {
         currency: 'EUR',
@@ -625,7 +627,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 19,
-        displayName: 'Cyprus'
+        displayName: { en: 'Cyprus', ar: 'قبرص' }
     },
     'czechia': {
         currency: 'CZK',
@@ -633,7 +635,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 23.00,
         defaultTax: 21,
-        displayName: 'Czechia'
+        displayName: { en: 'Czechia', ar: 'التشيك' }
     },
     'cote-d-ivoire': {
         currency: 'XOF',
@@ -641,7 +643,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 18,
-        displayName: 'Côte d\'Ivoire'
+        displayName: { en: 'Côte d\'Ivoire', ar: 'ساحل العاج' }
     },
     'denmark': {
         currency: 'DKK',
@@ -649,7 +651,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 6.90,
         defaultTax: 25,
-        displayName: 'Denmark'
+        displayName: { en: 'Denmark', ar: 'الدنمارك' }
     },
     'djibouti': {
         currency: 'DJF',
@@ -657,7 +659,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 178.00,
         defaultTax: 0,
-        displayName: 'Djibouti'
+        displayName: { en: 'Djibouti', ar: 'جيبوتي' }
     },
     'dominica': {
         currency: 'XCD',
@@ -665,7 +667,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.70,
         defaultTax: 15,
-        displayName: 'Dominica'
+        displayName: { en: 'Dominica', ar: 'دومينيكا' }
     },
     'dominican-republic': {
         currency: 'DOP',
@@ -673,7 +675,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 58.00,
         defaultTax: 18,
-        displayName: 'Dominican Republic'
+        displayName: { en: 'Dominican Republic', ar: 'جمهورية الدومينيكان' }
     },
     'ecuador': {
         currency: 'USD',
@@ -681,7 +683,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 12,
-        displayName: 'Ecuador'
+        displayName: { en: 'Ecuador', ar: 'الإكوادور' }
     },
     'el-salvador': {
         currency: 'USD',
@@ -689,7 +691,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 13,
-        displayName: 'El Salvador'
+        displayName: { en: 'El Salvador', ar: 'السلفادور' }
     },
     'equatorial-guinea': {
         currency: 'XAF',
@@ -697,7 +699,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 15,
-        displayName: 'Equatorial Guinea'
+        displayName: { en: 'Equatorial Guinea', ar: 'غينيا الاستوائية' }
     },
     'eritrea': {
         currency: 'ERN',
@@ -705,7 +707,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 15.00,
         defaultTax: 0,
-        displayName: 'Eritrea'
+        displayName: { en: 'Eritrea', ar: 'إريتريا' }
     },
     'estonia': {
         currency: 'EUR',
@@ -713,7 +715,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 20,
-        displayName: 'Estonia'
+        displayName: { en: 'Estonia', ar: 'إستونيا' }
     },
     'eswatini': {
         currency: 'SZL',
@@ -721,7 +723,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 18.00,
         defaultTax: 15,
-        displayName: 'Eswatini'
+        displayName: { en: 'Eswatini', ar: 'إسواتيني' }
     },
     'ethiopia': {
         currency: 'ETB',
@@ -729,7 +731,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 57.00,
         defaultTax: 15,
-        displayName: 'Ethiopia'
+        displayName: { en: 'Ethiopia', ar: 'إثيوبيا' }
     },
     'falkland-islands': {
         currency: 'FKP',
@@ -737,7 +739,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.78,
         defaultTax: 0,
-        displayName: 'Falkland Islands (Malvinas)'
+        displayName: { en: 'Falkland Islands (Malvinas)', ar: 'جزر فوكلاند (مالفيناس)' }
     },
     'faroe-islands': {
         currency: 'DKK',
@@ -745,7 +747,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 6.90,
         defaultTax: 25,
-        displayName: 'Faroe Islands'
+        displayName: { en: 'Faroe Islands', ar: 'جزر فارو' }
     },
     'fiji': {
         currency: 'FJD',
@@ -753,7 +755,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.20,
         defaultTax: 9,
-        displayName: 'Fiji'
+        displayName: { en: 'Fiji', ar: 'فيجي' }
     },
     'finland': {
         currency: 'EUR',
@@ -761,7 +763,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 24,
-        displayName: 'Finland'
+        displayName: { en: 'Finland', ar: 'فنلندا' }
     },
     'france': {
         currency: 'EUR',
@@ -769,7 +771,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 20,
-        displayName: 'France'
+        displayName: { en: 'France', ar: 'فرنسا' }
     },
     'french-guiana': {
         currency: 'EUR',
@@ -777,7 +779,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 0,
-        displayName: 'French Guiana'
+        displayName: { en: 'French Guiana', ar: 'غويانا الفرنسية' }
     },
     'french-polynesia': {
         currency: 'XPF',
@@ -785,7 +787,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 110.00,
         defaultTax: 0,
-        displayName: 'French Polynesia'
+        displayName: { en: 'French Polynesia', ar: 'بولينيزيا الفرنسية' }
     },
     'french-southern-territories': {
         currency: 'EUR',
@@ -793,7 +795,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 0,
-        displayName: 'French Southern Territories'
+        displayName: { en: 'French Southern Territories', ar: 'المناطق الجنوبية الفرنسية' }
     },
     'gabon': {
         currency: 'XAF',
@@ -801,7 +803,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 18,
-        displayName: 'Gabon'
+        displayName: { en: 'Gabon', ar: 'الغابون' }
     },
     'gambia': {
         currency: 'GMD',
@@ -809,7 +811,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 65.00,
         defaultTax: 15,
-        displayName: 'Gambia'
+        displayName: { en: 'Gambia', ar: 'غامبيا' }
     },
     'georgia': {
         currency: 'GEL',
@@ -817,7 +819,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.70,
         defaultTax: 18,
-        displayName: 'Georgia'
+        displayName: { en: 'Georgia', ar: 'جورجيا' }
     },
     'germany': {
         currency: 'EUR',
@@ -825,7 +827,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 19,
-        displayName: 'Germany'
+        displayName: { en: 'Germany', ar: 'ألمانيا' }
     },
     'ghana': {
         currency: 'GHS',
@@ -833,7 +835,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 14.00,
         defaultTax: 15,
-        displayName: 'Ghana'
+        displayName: { en: 'Ghana', ar: 'غانا' }
     },
     'gibraltar': {
         currency: 'GIP',
@@ -841,7 +843,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.78,
         defaultTax: 0,
-        displayName: 'Gibraltar'
+        displayName: { en: 'Gibraltar', ar: 'جبل طارق' }
     },
     'greece': {
         currency: 'EUR',
@@ -849,7 +851,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 24,
-        displayName: 'Greece'
+        displayName: { en: 'Greece', ar: 'اليونان' }
     },
     'greenland': {
         currency: 'DKK',
@@ -857,7 +859,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 6.90,
         defaultTax: 0,
-        displayName: 'Greenland'
+        displayName: { en: 'Greenland', ar: 'غرينلاند' }
     },
     'grenada': {
         currency: 'XCD',
@@ -865,7 +867,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.70,
         defaultTax: 15,
-        displayName: 'Grenada'
+        displayName: { en: 'Grenada', ar: 'غرينادا' }
     },
     'guadeloupe': {
         currency: 'EUR',
@@ -873,7 +875,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 0,
-        displayName: 'Guadeloupe'
+        displayName: { en: 'Guadeloupe', ar: 'جوادلوب' }
     },
     'guam': {
         currency: 'USD',
@@ -881,7 +883,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'Guam'
+        displayName: { en: 'Guam', ar: 'غوام' }
     },
     'guatemala': {
         currency: 'GTQ',
@@ -889,7 +891,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 7.70,
         defaultTax: 12,
-        displayName: 'Guatemala'
+        displayName: { en: 'Guatemala', ar: 'غواتيمالا' }
     },
     'guernsey': {
         currency: 'GBP',
@@ -897,7 +899,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.78,
         defaultTax: 0,
-        displayName: 'Guernsey'
+        displayName: { en: 'Guernsey', ar: 'غيرنزي' }
     },
     'guinea': {
         currency: 'GNF',
@@ -905,7 +907,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 8500.00,
         defaultTax: 18,
-        displayName: 'Guinea'
+        displayName: { en: 'Guinea', ar: 'غينيا' }
     },
     'guinea-bissau': {
         currency: 'XOF',
@@ -913,7 +915,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 18,
-        displayName: 'Guinea-Bissau'
+        displayName: { en: 'Guinea-Bissau', ar: 'غينيا بيساو' }
     },
     'guyana': {
         currency: 'GYD',
@@ -921,7 +923,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 210.00,
         defaultTax: 14,
-        displayName: 'Guyana'
+        displayName: { en: 'Guyana', ar: 'غيانا' }
     },
     'haiti': {
         currency: 'HTG',
@@ -929,7 +931,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 130.00,
         defaultTax: 10,
-        displayName: 'Haiti'
+        displayName: { en: 'Haiti', ar: 'هايتي' }
     },
     'holy-see': {
         currency: 'EUR',
@@ -937,7 +939,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 0,
-        displayName: 'Holy See (Vatican City State)'
+        displayName: { en: 'Holy See (Vatican City State)', ar: 'الكرسي الرسولي (دولة الفاتيكان)' }
     },
     'honduras': {
         currency: 'HNL',
@@ -945,7 +947,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 24.50,
         defaultTax: 15,
-        displayName: 'Honduras'
+        displayName: { en: 'Honduras', ar: 'هندوراس' }
     },
     'hungary': {
         currency: 'HUF',
@@ -953,7 +955,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 370.00,
         defaultTax: 27,
-        displayName: 'Hungary'
+        displayName: { en: 'Hungary', ar: 'المجر' }
     },
     'iceland': {
         currency: 'ISK',
@@ -961,7 +963,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 140.00,
         defaultTax: 24,
-        displayName: 'Iceland'
+        displayName: { en: 'Iceland', ar: 'آيسلندا' }
     },
     'iran': {
         currency: 'IRR',
@@ -969,7 +971,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 42000.00,
         defaultTax: 9,
-        displayName: 'Iran'
+        displayName: { en: 'Iran', ar: 'إيران' }
     },
     'iraq': {
         currency: 'IQD',
@@ -977,7 +979,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1300.00,
         defaultTax: 10,
-        displayName: 'Iraq'
+        displayName: { en: 'Iraq', ar: 'العراق' }
     },
     'ireland': {
         currency: 'EUR',
@@ -985,7 +987,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 23,
-        displayName: 'Ireland'
+        displayName: { en: 'Ireland', ar: 'أيرلندا' }
     },
     'isle-of-man': {
         currency: 'GBP',
@@ -993,7 +995,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.78,
         defaultTax: 0,
-        displayName: 'Isle of Man'
+        displayName: { en: 'Isle of Man', ar: 'جزيرة مان' }
     },
     'israel': {
         currency: 'ILS',
@@ -1001,7 +1003,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3.70,
         defaultTax: 17,
-        displayName: 'Israel'
+        displayName: { en: 'Israel', ar: 'إسرائيل' }
     },
     'italy': {
         currency: 'EUR',
@@ -1009,7 +1011,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 22,
-        displayName: 'Italy'
+        displayName: { en: 'Italy', ar: 'إيطاليا' }
     },
     'jamaica': {
         currency: 'JMD',
@@ -1017,7 +1019,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 155.00,
         defaultTax: 15,
-        displayName: 'Jamaica'
+        displayName: { en: 'Jamaica', ar: 'جامايكا' }
     },
     'jersey': {
         currency: 'GBP',
@@ -1025,7 +1027,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.78,
         defaultTax: 5,
-        displayName: 'Jersey'
+        displayName: { en: 'Jersey', ar: 'جيرسي' }
     },
     'jordan': {
         currency: 'JOD',
@@ -1033,7 +1035,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.71,
         defaultTax: 16,
-        displayName: 'Jordan'
+        displayName: { en: 'Jordan', ar: 'الأردن' }
     },
     'kazakhstan': {
         currency: 'KZT',
@@ -1041,7 +1043,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 450.00,
         defaultTax: 12,
-        displayName: 'Kazakhstan'
+        displayName: { en: 'Kazakhstan', ar: 'كازاخستان' }
     },
     'kiribati': {
         currency: 'AUD',
@@ -1049,7 +1051,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.50,
         defaultTax: 0,
-        displayName: 'Kiribati'
+        displayName: { en: 'Kiribati', ar: 'كيريباتي' }
     },
     'north-korea': {
         currency: 'KPW',
@@ -1057,7 +1059,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 900.00,
         defaultTax: 0,
-        displayName: 'North Korea'
+        displayName: { en: 'North Korea', ar: 'كوريا الشمالية' }
     },
     'kyrgyzstan': {
         currency: 'KGS',
@@ -1065,7 +1067,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 89.00,
         defaultTax: 12,
-        displayName: 'Kyrgyzstan'
+        displayName: { en: 'Kyrgyzstan', ar: 'قيرغيزستان' }
     },
     'laos': {
         currency: 'LAK',
@@ -1073,7 +1075,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 20000.00,
         defaultTax: 10,
-        displayName: 'Laos'
+        displayName: { en: 'Laos', ar: 'لاوس' }
     },
     'latvia': {
         currency: 'EUR',
@@ -1081,7 +1083,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 21,
-        displayName: 'Latvia'
+        displayName: { en: 'Latvia', ar: 'لاتفيا' }
     },
     'lebanon': {
         currency: 'LBP',
@@ -1089,7 +1091,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 15000.00,
         defaultTax: 11,
-        displayName: 'Lebanon'
+        displayName: { en: 'Lebanon', ar: 'لبنان' }
     },
     'lesotho': {
         currency: 'LSL',
@@ -1097,7 +1099,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 18.00,
         defaultTax: 15,
-        displayName: 'Lesotho'
+        displayName: { en: 'Lesotho', ar: 'ليسوتو' }
     },
     'liberia': {
         currency: 'LRD',
@@ -1105,7 +1107,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 190.00,
         defaultTax: 10,
-        displayName: 'Liberia'
+        displayName: { en: 'Liberia', ar: 'ليبيريا' }
     },
     'libya': {
         currency: 'LYD',
@@ -1113,7 +1115,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 4.80,
         defaultTax: 0,
-        displayName: 'Libya'
+        displayName: { en: 'Libya', ar: 'ليبيا' }
     },
     'liechtenstein': {
         currency: 'CHF',
@@ -1121,7 +1123,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.90,
         defaultTax: 7.7,
-        displayName: 'Liechtenstein'
+        displayName: { en: 'Liechtenstein', ar: 'ليختنشتاين' }
     },
     'lithuania': {
         currency: 'EUR',
@@ -1129,7 +1131,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 21,
-        displayName: 'Lithuania'
+        displayName: { en: 'Lithuania', ar: 'ليتوانيا' }
     },
     'luxembourg': {
         currency: 'EUR',
@@ -1137,7 +1139,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 17,
-        displayName: 'Luxembourg'
+        displayName: { en: 'Luxembourg', ar: 'لوكسمبورغ' }
     },
     'macao': {
         currency: 'MOP',
@@ -1145,7 +1147,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 8.00,
         defaultTax: 0,
-        displayName: 'Macao'
+        displayName: { en: 'Macao', ar: 'ماكاو' }
     },
     'madagascar': {
         currency: 'MGA',
@@ -1153,7 +1155,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 4500.00,
         defaultTax: 20,
-        displayName: 'Madagascar'
+        displayName: { en: 'Madagascar', ar: 'مدغشقر' }
     },
     'malawi': {
         currency: 'MWK',
@@ -1161,7 +1163,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1700.00,
         defaultTax: 16.5,
-        displayName: 'Malawi'
+        displayName: { en: 'Malawi', ar: 'مالاوي' }
     },
     'maldives': {
         currency: 'MVR',
@@ -1169,7 +1171,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 15.40,
         defaultTax: 6,
-        displayName: 'Maldives'
+        displayName: { en: 'Maldives', ar: 'جزر المالديف' }
     },
     'mali': {
         currency: 'XOF',
@@ -1177,7 +1179,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 18,
-        displayName: 'Mali'
+        displayName: { en: 'Mali', ar: 'مالي' }
     },
     'malta': {
         currency: 'EUR',
@@ -1185,7 +1187,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 18,
-        displayName: 'Malta'
+        displayName: { en: 'Malta', ar: 'مالطا' }
     },
     'marshall-islands': {
         currency: 'USD',
@@ -1193,7 +1195,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'Marshall Islands'
+        displayName: { en: 'Marshall Islands', ar: 'جزر مارشال' }
     },
     'martinique': {
         currency: 'EUR',
@@ -1201,7 +1203,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 0,
-        displayName: 'Martinique'
+        displayName: { en: 'Martinique', ar: 'مارتينيك' }
     },
     'mauritanin': {
         currency: 'MRU',
@@ -1209,7 +1211,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 360.00,
         defaultTax: 18,
-        displayName: 'Mauritania'
+        displayName: { en: 'Mauritania', ar: 'موريتانيا' }
     },
     'mauritius': {
         currency: 'MUR',
@@ -1217,7 +1219,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 46.00,
         defaultTax: 15,
-        displayName: 'Mauritius'
+        displayName: { en: 'Mauritius', ar: 'موريشيوس' }
     },
     'mayotte': {
         currency: 'EUR',
@@ -1225,7 +1227,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 0,
-        displayName: 'Mayotte'
+        displayName: { en: 'Mayotte', ar: 'مايوت' }
     },
     'micronesia': {
         currency: 'USD',
@@ -1233,7 +1235,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'Micronesia (Federated States of)'
+        displayName: { en: 'Micronesia (Federated States of)', ar: 'ميكرونيزيا (ولايات - الموحدة)' }
     },
     'moldova': {
         currency: 'MDL',
@@ -1241,7 +1243,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 18.00,
         defaultTax: 20,
-        displayName: 'Moldova'
+        displayName: { en: 'Moldova', ar: 'مولدوفا' }
     },
     'monaco': {
         currency: 'EUR',
@@ -1249,7 +1251,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 20,
-        displayName: 'Monaco'
+        displayName: { en: 'Monaco', ar: 'موناكو' }
     },
     'mongolia': {
         currency: 'MNT',
@@ -1257,7 +1259,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3400.00,
         defaultTax: 10,
-        displayName: 'Mongolia'
+        displayName: { en: 'Mongolia', ar: 'منغوليا' }
     },
     'montenegro': {
         currency: 'EUR',
@@ -1265,7 +1267,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 21,
-        displayName: 'Montenegro'
+        displayName: { en: 'Montenegro', ar: 'الجبل الأسود' }
     },
     'montserrat': {
         currency: 'XCD',
@@ -1273,7 +1275,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.70,
         defaultTax: 0,
-        displayName: 'Montserrat'
+        displayName: { en: 'Montserrat', ar: 'مونتسيرات' }
     },
     'morocco': {
         currency: 'MAD',
@@ -1281,7 +1283,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 10.00,
         defaultTax: 20,
-        displayName: 'Morocco'
+        displayName: { en: 'Morocco', ar: 'المغرب' }
     },
     'mozambique': {
         currency: 'MZN',
@@ -1289,7 +1291,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 64.00,
         defaultTax: 17,
-        displayName: 'Mozambique'
+        displayName: { en: 'Mozambique', ar: 'موزمبيق' }
     },
     'myanmar': {
         currency: 'MMK',
@@ -1297,7 +1299,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2100.00,
         defaultTax: 0,
-        displayName: 'Myanmar'
+        displayName: { en: 'Myanmar', ar: 'ميانمار' }
     },
     'namibia': {
         currency: 'NAD',
@@ -1305,7 +1307,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 18.00,
         defaultTax: 15,
-        displayName: 'Namibia'
+        displayName: { en: 'Namibia', ar: 'ناميبيا' }
     },
     'nauru': {
         currency: 'AUD',
@@ -1313,7 +1315,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.50,
         defaultTax: 0,
-        displayName: 'Nauru'
+        displayName: { en: 'Nauru', ar: 'ناورو' }
     },
     'nepal': {
         currency: 'NPR',
@@ -1321,7 +1323,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 133.00,
         defaultTax: 13,
-        displayName: 'Nepal'
+        displayName: { en: 'Nepal', ar: 'نيبال' }
     },
     'netherlands': {
         currency: 'EUR',
@@ -1329,7 +1331,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 21,
-        displayName: 'Netherlands'
+        displayName: { en: 'Netherlands', ar: 'هولندا' }
     },
     'new-caledonia': {
         currency: 'XPF',
@@ -1337,7 +1339,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 110.00,
         defaultTax: 0,
-        displayName: 'New Caledonia'
+        displayName: { en: 'New Caledonia', ar: 'كاليدونيا الجديدة' }
     },
     'nicaragua': {
         currency: 'NIO',
@@ -1345,7 +1347,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 36.50,
         defaultTax: 15,
-        displayName: 'Nicaragua'
+        displayName: { en: 'Nicaragua', ar: 'نيكاراغوا' }
     },
     'niger': {
         currency: 'XOF',
@@ -1353,7 +1355,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 18,
-        displayName: 'Niger'
+        displayName: { en: 'Niger', ar: 'النيجر' }
     },
     'niue': {
         currency: 'NZD',
@@ -1361,7 +1363,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.63,
         defaultTax: 0,
-        displayName: 'Niue'
+        displayName: { en: 'Niue', ar: 'نيوي' }
     },
     'norfolk-island': {
         currency: 'AUD',
@@ -1369,7 +1371,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.50,
         defaultTax: 0,
-        displayName: 'Norfolk Island'
+        displayName: { en: 'Norfolk Island', ar: 'جزيرة نورفولك' }
     },
     'north-macedonia': {
         currency: 'MKD',
@@ -1377,7 +1379,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 56.00,
         defaultTax: 18,
-        displayName: 'North Macedonia'
+        displayName: { en: 'North Macedonia', ar: 'مقدونيا الشمالية' }
     },
     'northern-mariana-islands': {
         currency: 'USD',
@@ -1385,7 +1387,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'Northern Mariana Islands'
+        displayName: { en: 'Northern Mariana Islands', ar: 'جزر ماريانا الشمالية' }
     },
     'norway': {
         currency: 'NOK',
@@ -1393,7 +1395,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 10.50,
         defaultTax: 25,
-        displayName: 'Norway'
+        displayName: { en: 'Norway', ar: 'النرويج' }
     },
     'palau': {
         currency: 'USD',
@@ -1401,7 +1403,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'Palau'
+        displayName: { en: 'Palau', ar: 'بالاو' }
     },
     'palestine': {
         currency: 'ILS', // Often uses ILS or JOD
@@ -1409,7 +1411,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3.70,
         defaultTax: 0,
-        displayName: 'Palestine, State of'
+        displayName: { en: 'Palestine, State of', ar: 'دولة فلسطين' }
     },
     'panama': {
         currency: 'PAB',
@@ -1417,7 +1419,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 7,
-        displayName: 'Panama'
+        displayName: { en: 'Panama', ar: 'بنما' }
     },
     'papua-new-guinea': {
         currency: 'PGK',
@@ -1425,7 +1427,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3.80,
         defaultTax: 10,
-        displayName: 'Papua New Guinea'
+        displayName: { en: 'Papua New Guinea', ar: 'بابوا غينيا الجديدة' }
     },
     'paraguay': {
         currency: 'PYG',
@@ -1433,7 +1435,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 7400,
         defaultTax: 10,
-        displayName: 'Paraguay'
+        displayName: { en: 'Paraguay', ar: 'باراغواي' }
     },
     'peru': {
         currency: 'PEN',
@@ -1441,7 +1443,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3.70,
         defaultTax: 18,
-        displayName: 'Peru'
+        displayName: { en: 'Peru', ar: 'بيرو' }
     },
     'philippines': {
         currency: 'PHP',
@@ -1449,7 +1451,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 58.00,
         defaultTax: 12,
-        displayName: 'Philippines'
+        displayName: { en: 'Philippines', ar: 'الفلبين' }
     },
     'pitcairn': {
         currency: 'NZD',
@@ -1457,7 +1459,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.63,
         defaultTax: 0,
-        displayName: 'Pitcairn'
+        displayName: { en: 'Pitcairn', ar: 'جزر بيتكيرن' }
     },
     'poland': {
         currency: 'PLN',
@@ -1465,7 +1467,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 4.00,
         defaultTax: 23,
-        displayName: 'Poland'
+        displayName: { en: 'Poland', ar: 'بولندا' }
     },
     'portugal': {
         currency: 'EUR',
@@ -1473,7 +1475,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 23,
-        displayName: 'Portugal'
+        displayName: { en: 'Portugal', ar: 'البرتغال' }
     },
     'puerto-rico': {
         currency: 'USD',
@@ -1481,7 +1483,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 10.5,
-        displayName: 'Puerto Rico'
+        displayName: { en: 'Puerto Rico', ar: 'بورتوريكو' }
     },
     'romania': {
         currency: 'RON',
@@ -1489,7 +1491,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 4.60,
         defaultTax: 19,
-        displayName: 'Romania'
+        displayName: { en: 'Romania', ar: 'رومانيا' }
     },
     'russia': {
         currency: 'RUB',
@@ -1497,7 +1499,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 90.00,
         defaultTax: 20,
-        displayName: 'Russia'
+        displayName: { en: 'Russia', ar: 'روسيا' }
     },
     'rwanda': {
         currency: 'RWF',
@@ -1505,7 +1507,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1300,
         defaultTax: 18,
-        displayName: 'Rwanda'
+        displayName: { en: 'Rwanda', ar: 'رواندا' }
     },
     'reunion': {
         currency: 'EUR',
@@ -1513,7 +1515,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 0,
-        displayName: 'Réunion'
+        displayName: { en: 'Réunion', ar: 'ريونيون' }
     },
     'saint-barthelemy': {
         currency: 'EUR',
@@ -1521,7 +1523,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 0,
-        displayName: 'Saint Barthélemy'
+        displayName: { en: 'Saint Barthélemy', ar: 'سان بارتيلمي' }
     },
     'saint-helena': {
         currency: 'SHP',
@@ -1529,7 +1531,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.78,
         defaultTax: 0,
-        displayName: 'Saint Helena, Ascension and Tristan da Cunha'
+        displayName: { en: 'Saint Helena, Ascension and Tristan da Cunha', ar: 'سانت هيلانة وأسينشين وتريستان دا كونا' }
     },
     'saint-kitts-and-nevis': {
         currency: 'XCD',
@@ -1537,14 +1539,15 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.70,
         defaultTax: 17,
-        displayName: 'Saint Kitts and Nevis'
+        displayName: { en: 'Saint Kitts and Nevis', ar: 'سانت كيتس ونيفيس' }
     },
     'saint-lucia': {
         currency: 'XCD',
         symbol: 'EC$',
-        basePriceTroyOunceUSD: 2.70,
+        basePriceTroyOunceUSD: 3270.00,
+        exchangeRateToUSD: 2.70,
         defaultTax: 15,
-        displayName: 'Saint Lucia'
+        displayName: { en: 'Saint Lucia', ar: 'سانت لوسيا' }
     },
     'saint-martin-french': {
         currency: 'EUR',
@@ -1552,7 +1555,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 0,
-        displayName: 'Saint Martin (French part)'
+        displayName: { en: 'Saint Martin (French part)', ar: 'سانت مارتن (الجزء الفرنسي)' }
     },
     'saint-pierre-and-miquelon': {
         currency: 'EUR',
@@ -1560,7 +1563,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 0,
-        displayName: 'Saint Pierre and Miquelon'
+        displayName: { en: 'Saint Pierre and Miquelon', ar: 'سان بيير وميكلون' }
     },
     'saint-vincent-and-the-grenadines': {
         currency: 'XCD',
@@ -1568,7 +1571,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.70,
         defaultTax: 15,
-        displayName: 'Saint Vincent and the Grenadines'
+        displayName: { en: 'Saint Vincent and the Grenadines', ar: 'سانت فينسنت والغرينادين' }
     },
     'samoa': {
         currency: 'WST',
@@ -1576,7 +1579,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.80,
         defaultTax: 15,
-        displayName: 'Samoa'
+        displayName: { en: 'Samoa', ar: 'ساموا' }
     },
     'san-marino': {
         currency: 'EUR',
@@ -1584,7 +1587,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 17,
-        displayName: 'San Marino'
+        displayName: { en: 'San Marino', ar: 'سان مارينو' }
     },
     'sao-tome-and-principe': {
         currency: 'STD',
@@ -1592,7 +1595,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 22000,
         defaultTax: 15,
-        displayName: 'Sao Tome and Principe'
+        displayName: { en: 'Sao Tome and Principe', ar: 'ساو تومي وبرينسيب' }
     },
     'senegal': {
         currency: 'XOF',
@@ -1600,7 +1603,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 18,
-        displayName: 'Senegal'
+        displayName: { en: 'Senegal', ar: 'السنغال' }
     },
     'serbia': {
         currency: 'RSD',
@@ -1608,7 +1611,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 108.00,
         defaultTax: 20,
-        displayName: 'Serbia'
+        displayName: { en: 'Serbia', ar: 'صربيا' }
     },
     'seychelles': {
         currency: 'SCR',
@@ -1616,7 +1619,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 13.50,
         defaultTax: 15,
-        displayName: 'Seychelles'
+        displayName: { en: 'Seychelles', ar: 'سيشل' }
     },
     'sierra-leone': {
         currency: 'SLL',
@@ -1624,7 +1627,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 20000,
         defaultTax: 15,
-        displayName: 'Sierra Leone'
+        displayName: { en: 'Sierra Leone', ar: 'سيراليون' }
     },
     'sint-maarten-dutch': {
         currency: 'ANG',
@@ -1632,7 +1635,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.80,
         defaultTax: 5,
-        displayName: 'Sint Maarten (Dutch part)'
+        displayName: { en: 'Sint Maarten (Dutch part)', ar: 'سينت مارتن (الجزء الهولندي)' }
     },
     'slovakia': {
         currency: 'EUR',
@@ -1640,7 +1643,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 20,
-        displayName: 'Slovakia'
+        displayName: { en: 'Slovakia', ar: 'سلوفاكيا' }
     },
     'slovenia': {
         currency: 'EUR',
@@ -1648,7 +1651,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 22,
-        displayName: 'Slovenia'
+        displayName: { en: 'Slovenia', ar: 'سلوفينيا' }
     },
     'solomon-islands': {
         currency: 'SBD',
@@ -1656,7 +1659,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 8.40,
         defaultTax: 0,
-        displayName: 'Solomon Islands'
+        displayName: { en: 'Solomon Islands', ar: 'جزر سليمان' }
     },
     'somalia': {
         currency: 'SOS',
@@ -1664,7 +1667,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 570.00,
         defaultTax: 0,
-        displayName: 'Somalia'
+        displayName: { en: 'Somalia', ar: 'الصومال' }
     },
     'south-sudan': {
         currency: 'SSP',
@@ -1672,7 +1675,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1200.00,
         defaultTax: 0,
-        displayName: 'South Sudan'
+        displayName: { en: 'South Sudan', ar: 'جنوب السودان' }
     },
     'spain': {
         currency: 'EUR',
@@ -1680,7 +1683,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 21,
-        displayName: 'Spain'
+        displayName: { en: 'Spain', ar: 'إسبانيا' }
     },
     'sri-lanka': {
         currency: 'LKR',
@@ -1688,7 +1691,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 300.00,
         defaultTax: 18,
-        displayName: 'Sri Lanka'
+        displayName: { en: 'Sri Lanka', ar: 'سريلانكا' }
     },
     'sudn': {
         currency: 'SDG',
@@ -1696,7 +1699,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 600.00,
         defaultTax: 17,
-        displayName: 'Sudan'
+        displayName: { en: 'Sudan', ar: 'السودان' }
     },
     'suriname': {
         currency: 'SRD',
@@ -1704,7 +1707,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 35.00,
         defaultTax: 10,
-        displayName: 'Suriname'
+        displayName: { en: 'Suriname', ar: 'سورينام' }
     },
     'svalbard-and-jan-mayen': {
         currency: 'NOK',
@@ -1712,7 +1715,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 10.50,
         defaultTax: 0,
-        displayName: 'Svalbard and Jan Mayen'
+        displayName: { en: 'Svalbard and Jan Mayen', ar: 'سفالبارد ويان ماين' }
     },
     'sweden': {
         currency: 'SEK',
@@ -1720,7 +1723,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 10.50,
         defaultTax: 25,
-        displayName: 'Sweden'
+        displayName: { en: 'Sweden', ar: 'السويد' }
     },
     'syria': {
         currency: 'SYP',
@@ -1728,7 +1731,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 13500.00,
         defaultTax: 0,
-        displayName: 'Syria'
+        displayName: { en: 'Syria', ar: 'سوريا' }
     },
     'taiwan': {
         currency: 'TWD',
@@ -1736,7 +1739,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 32.00,
         defaultTax: 5,
-        displayName: 'Taiwan'
+        displayName: { en: 'Taiwan', ar: 'تايوان' }
     },
     'tajikistan': {
         currency: 'TJS',
@@ -1744,7 +1747,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 10.90,
         defaultTax: 18,
-        displayName: 'Tajikistan'
+        displayName: { en: 'Tajikistan', ar: 'طاجيكستان' }
     },
     'tanzania': {
         currency: 'TZS',
@@ -1752,7 +1755,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2500.00,
         defaultTax: 18,
-        displayName: 'Tanzania, United Republic of'
+        displayName: { en: 'Tanzania, United Republic of', ar: 'جمهورية تنزانيا المتحدة' }
     },
     'timor-leste': {
         currency: 'USD',
@@ -1760,7 +1763,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'Timor-Leste'
+        displayName: { en: 'Timor-Leste', ar: 'تيمور الشرقية' }
     },
     'togo': {
         currency: 'XOF',
@@ -1768,7 +1771,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 610.00,
         defaultTax: 18,
-        displayName: 'Togo'
+        displayName: { en: 'Togo', ar: 'توغو' }
     },
     'tokelau': {
         currency: 'NZD',
@@ -1776,7 +1779,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.63,
         defaultTax: 0,
-        displayName: 'Tokelau'
+        displayName: { en: 'Tokelau', ar: 'توكيلاو' }
     },
     'tonga': {
         currency: 'TOP',
@@ -1784,7 +1787,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 2.30,
         defaultTax: 15,
-        displayName: 'Tonga'
+        displayName: { en: 'Tonga', ar: 'تونغا' }
     },
     'trinidad-and-tobago': {
         currency: 'TTD',
@@ -1792,7 +1795,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 6.80,
         defaultTax: 12.5,
-        displayName: 'Trinidad and Tobago'
+        displayName: { en: 'Trinidad and Tobago', ar: 'ترينيداد وتوباغو' }
     },
     'tunisia': {
         currency: 'TND',
@@ -1800,7 +1803,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3.10,
         defaultTax: 19,
-        displayName: 'Tunisia'
+        displayName: { en: 'Tunisia', ar: 'تونس' }
     },
     'turkmenistan': {
         currency: 'TMT',
@@ -1808,7 +1811,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3.50,
         defaultTax: 0,
-        displayName: 'Turkmenistan'
+        displayName: { en: 'Turkmenistan', ar: 'تركمانستان' }
     },
     'turks-and-caicos-islands': {
         currency: 'USD',
@@ -1816,7 +1819,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'Turks and Caicos Islands'
+        displayName: { en: 'Turks and Caicos Islands', ar: 'جزر تركس وكايكوس' }
     },
     'tuvalu': {
         currency: 'AUD',
@@ -1824,7 +1827,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1.50,
         defaultTax: 0,
-        displayName: 'Tuvalu'
+        displayName: { en: 'Tuvalu', ar: 'توفالو' }
     },
     'uganda': {
         currency: 'UGX',
@@ -1832,7 +1835,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 3700.00,
         defaultTax: 18,
-        displayName: 'Uganda'
+        displayName: { en: 'Uganda', ar: 'أوغندا' }
     },
     'ukraine': {
         currency: 'UAH',
@@ -1840,7 +1843,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 40.00,
         defaultTax: 20,
-        displayName: 'Ukraine'
+        displayName: { en: 'Ukraine', ar: 'أوكرانيا' }
     },
     'united-states-minor-outlying-islands': {
         currency: 'USD',
@@ -1848,7 +1851,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'United States Minor Outlying Islands'
+        displayName: { en: 'United States Minor Outlying Islands', ar: 'جزر الولايات المتحدة الصغيرة النائية' }
     },
     'uruguay': {
         currency: 'UYU',
@@ -1856,7 +1859,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 39.00,
         defaultTax: 22,
-        displayName: 'Uruguay'
+        displayName: { en: 'Uruguay', ar: 'أوروغواي' }
     },
     'uzbekistan': {
         currency: 'UZS',
@@ -1864,7 +1867,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 12600.00,
         defaultTax: 12,
-        displayName: 'Uzbekistan'
+        displayName: { en: 'Uzbekistan', ar: 'أوزبكستان' }
     },
     'vanuatu': {
         currency: 'VUV',
@@ -1872,7 +1875,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 120.00,
         defaultTax: 0,
-        displayName: 'Vanuatu'
+        displayName: { en: 'Vanuatu', ar: 'فانواتو' }
     },
     'venezuela': {
         currency: 'VES',
@@ -1880,7 +1883,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 36.00,
         defaultTax: 16,
-        displayName: 'Venezuela (Bolivarian Republic of)'
+        displayName: { en: 'Venezuela (Bolivarian Republic of)', ar: 'فنزويلا (جمهورية بوليفارية)' }
     },
     'virgin-islands-british': {
         currency: 'USD',
@@ -1888,7 +1891,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'Virgin Islands, British'
+        displayName: { en: 'Virgin Islands, British', ar: 'جزر فيرجن البريطانية' }
     },
     'virgin-islands-us': {
         currency: 'USD',
@@ -1896,7 +1899,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 1,
         defaultTax: 0,
-        displayName: 'Virgin Islands, U.S.'
+        displayName: { en: 'Virgin Islands, U.S.', ar: 'جزر فيرجن الأمريكية' }
     },
     'wallis-and-futuna': {
         currency: 'XPF',
@@ -1904,7 +1907,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 110.00,
         defaultTax: 0,
-        displayName: 'Wallis and Futuna'
+        displayName: { en: 'Wallis and Futuna', ar: 'واليس وفوتونا' }
     },
     'western-sahara': {
         currency: 'MAD', // Often uses MAD or DZD
@@ -1912,7 +1915,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 10.00,
         defaultTax: 0,
-        displayName: 'Western Sahara'
+        displayName: { en: 'Western Sahara', ar: 'الصحراء الغربية' }
     },
     'yemen': {
         currency: 'YER',
@@ -1920,7 +1923,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 250.00,
         defaultTax: 5,
-        displayName: 'Yemen'
+        displayName: { en: 'Yemen', ar: 'اليمن' }
     },
     'zambia': {
         currency: 'ZMW',
@@ -1928,7 +1931,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 26.00,
         defaultTax: 16,
-        displayName: 'Zambia'
+        displayName: { en: 'Zambia', ar: 'زامبيا' }
     },
     'zimbabwe': {
         currency: 'ZWL',
@@ -1936,7 +1939,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 360000.00,
         defaultTax: 15,
-        displayName: 'Zimbabwe'
+        displayName: { en: 'Zimbabwe', ar: 'زيمبابوي' }
     },
     'aland-islands': {
         currency: 'EUR',
@@ -1944,7 +1947,7 @@ const countryData = {
         basePriceTroyOunceUSD: 3270.00,
         exchangeRateToUSD: 0.92,
         defaultTax: 0,
-        displayName: 'Åland Islands'
+        displayName: { en: 'Åland Islands', ar: 'جزر أولاند' }
     }
 };
 
@@ -1954,6 +1957,66 @@ const purity = {
     '22': 0.916,
     '21': 0.875,
     '18': 0.750
+};
+
+// Translations object
+const translations = {
+    en: {
+        appName: "Gold Metric",
+        selectCountry: "Select Country:",
+        goldPrice: "World Gold Price Live",
+        goldPricesPerGram: "Gold Prices per Gram:",
+        calculateTotalPrice: "Calculate Total Price:",
+        weightGrams: "Weight (grams):",
+        enterGramsPlaceholder: "Enter grams here",
+        weightError: "Please enter a valid positive number for weight.",
+        selectKarat: "Select Karat:",
+        makingChargesValue: "Making Charges value:",
+        enterMakingChargesPlaceholder: "Enter % making charges",
+        taxPercentage: "Tax Percentage (%):",
+        enterTaxPercentagePlaceholder: "Enter tax percentage",
+        goldValueBeforeChargesAndTax: "Gold Value (before charges & tax):",
+        makingChargesAmount: "Making Charges Amount:",
+        taxAmount: "Tax Amount:",
+        estimatedTotalValue: "Estimated Total Value:",
+        aboutApp: "About the App",
+        aboutDescription: "Gold Metric is a tool to accurately and easily calculate gold prices, supporting multiple countries and karats, and providing options for taxes and making charges.",
+        versionInfo: "Version: 1.0.0",
+        developerInfo: "Developer: adel alblooshi",
+        emailInfo: "Email: adeltechstudio@gmail.com",
+        copyright: "All rights reserved.",
+        home: "Home",
+        language: "English", // For the current language display in the menu
+        arabic: "Arabic" // For the menu option
+    },
+    ar: {
+        appName: "مقياس الذهب",
+        selectCountry: "اختر الدولة:",
+        goldPrice: "سعر الذهب العالمي مباشر",
+        goldPricesPerGram: "أسعار الذهب بالجرام:",
+        calculateTotalPrice: "حساب السعر الإجمالي:",
+        weightGrams: "الوزن (جرام):",
+        enterGramsPlaceholder: "أدخل الجرامات هنا",
+        weightError: "الرجاء إدخال رقم موجب وصحيح للوزن.",
+        selectKarat: "اختر العيار:",
+        makingChargesValue: "قيمة المصنعية:",
+        enterMakingChargesPlaceholder: "أدخل نسبة المصنعية %",
+        taxPercentage: "نسبة الضريبة (%):",
+        enterTaxPercentagePlaceholder: "أدخل نسبة الضريبة",
+        goldValueBeforeChargesAndTax: "قيمة الذهب (قبل المصنعية والضريبة):",
+        makingChargesAmount: "مبلغ المصنعية:",
+        taxAmount: "مبلغ الضريبة:",
+        estimatedTotalValue: "القيمة الإجمالية التقديرية:",
+        aboutApp: "عن التطبيق",
+        aboutDescription: "تطبيق Gold Metric هو أداة لحساب أسعار الذهب بدقة وسهولة، يدعم دول وعيارات متعددة ويوفر خيارات الضرائب والصنعة.",
+        versionInfo: "الإصدار: 1.0.0",
+        developerInfo: "المطور: adel alblooshi",
+        emailInfo: "البريد الإلكتروني: adeltechstudio@gmail.com",
+        copyright: "جميع الحقوق محفوظة.",
+        home: "الرئيسية",
+        language: "العربية", // For the current language display in the menu
+        english: "الإنجليزية" // For the menu option
+    }
 };
 
 // Get references to DOM elements
@@ -1976,19 +2039,132 @@ const makingChargesAmountDisplay = document.getElementById('makingChargesAmountD
 const taxAmountDisplay = document.getElementById('taxAmountDisplay');
 const selectedKaratPriceDisplay = document.getElementById('selectedKaratPriceDisplay');
 
+// Menu elements
+const menuButton = document.getElementById('menuButton');
+const sideMenu = document.getElementById('sideMenu');
+const closeMenuButton = document.getElementById('closeMenuButton');
+const menuOverlay = document.getElementById('menuOverlay');
+const langToggle = document.getElementById('langToggle');
+const currentLangSpan = document.getElementById('currentLang');
+const openAboutModalBtn = document.getElementById('openAboutModal');
+const aboutModal = document.getElementById('aboutModal');
+const closeAboutModalBtn = document.getElementById('closeAboutModal');
+const copyrightNotice = document.getElementById('copyrightNotice');
+
+
 let currentGoldPricePerGramUSD = 0;
+let currentLanguage = 'en'; // Default language
+
+// Function to translate the page content
+function translatePage(lang) {
+    // Translate elements with data-translate-key
+    const elements = document.querySelectorAll('[data-translate-key]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-translate-key');
+        if (translations[lang] && translations[lang][key]) {
+            element.textContent = translations[lang][key];
+        }
+    });
+
+    // Translate placeholder attributes
+    const placeholders = document.querySelectorAll('[data-translate-placeholder-key]');
+    placeholders.forEach(element => {
+        const key = element.getAttribute('data-translate-placeholder-key');
+        if (translations[lang] && translations[lang][key]) {
+            element.placeholder = translations[lang][key];
+        }
+    });
+
+    // Update body direction
+    document.body.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+
+    // Update About Modal content direction
+    const aboutModalDiv = aboutModal.querySelector('div'); // Get the inner div where the text is
+    if (aboutModalDiv) {
+        aboutModalDiv.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+    }
+    
+    // Update copyright notice explicitly
+    if (copyrightNotice) {
+        copyrightNotice.textContent = `© 2025 Gold Metric. ${translations[lang].copyright}`;
+    }
+
+    // Update language toggle text in menu
+    if (langToggle) {
+        const displayLangKey = (lang === 'en') ? 'arabic' : 'english';
+        langToggle.innerHTML = `<i class="fas fa-language mr-3 text-[#5680E9]"></i> ${translations[lang].language} / ${translations[lang][displayLangKey]}`;
+    }
+    
+    // Re-populate country select with translated names
+    populateCountrySelect(lang);
+    // Re-calculate and update gold prices and total to ensure correct currency symbols and formatting
+    fetchRealtimeGoldPrice();
+}
+
+// Function to toggle menu visibility
+function toggleMenu() {
+    sideMenu.classList.toggle('open');
+    menuOverlay.classList.toggle('active');
+}
+
+// Event listeners for menu
+menuButton.addEventListener('click', toggleMenu);
+closeMenuButton.addEventListener('click', toggleMenu);
+menuOverlay.addEventListener('click', toggleMenu); // Close menu when clicking outside
+
+// Handle "Home" link click (scroll to top)
+const homeLink = document.querySelector('a[data-translate-key="home"]'); 
+if (homeLink) {
+    homeLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        toggleMenu(); // Close menu after clicking
+    });
+}
+
+// Handle "About" modal open/close
+if (openAboutModalBtn) {
+    openAboutModalBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        aboutModal.style.display = 'flex'; // Show the modal
+        toggleMenu(); // Close side menu when opening modal
+    });
+}
+
+if (closeAboutModalBtn) {
+    closeAboutModalBtn.addEventListener('click', () => {
+        aboutModal.style.display = 'none'; // Hide the modal
+    });
+}
+
+// Close modal if user clicks outside of it
+window.addEventListener('click', (event) => {
+    if (event.target == aboutModal) {
+        aboutModal.style.display = 'none';
+    }
+});
+
+// Language toggle functionality
+langToggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    currentLanguage = (currentLanguage === 'en') ? 'ar' : 'en';
+    translatePage(currentLanguage);
+    console.log(`Language switched to ${currentLanguage}`);
+});
 
 /**
  * Populates the country select dropdown with sorted options.
  * Retains the previously selected value if it exists.
+ * @param {string} lang - The current language ('en' or 'ar') for display names.
  */
-function populateCountrySelect() {
+function populateCountrySelect(lang = currentLanguage) {
     const currentSelectedValue = countrySelect.value;
     
     // Convert countryData object to an array of objects for sorting
     const countriesArray = Object.keys(countryData).map(key => ({
         value: key,
-        text: countryData[key].displayName || key.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+        // Use the translated displayName based on the current language
+        text: countryData[key].displayName[lang] || countryData[key].displayName['en'] // Fallback to English
     }));
 
     // Sort the array alphabetically by display name
@@ -2027,7 +2203,8 @@ function updateGoldPrices(newBasePriceTroyOunceUSD) {
 
     // Calculate the displayed price for troy ounce in local currency
     const displayPriceTroyOunce = newBasePriceTroyOunceUSD * country.exchangeRateToUSD;
-    countryCurrencySymbol.textContent = displayPriceTroyOunce.toFixed(2);
+    countryCurrencySymbol.textContent = country.symbol;
+    actualRealTimePrice.textContent = displayPriceTroyOunce.toFixed(2);
 
     // Calculate current 24K gold price per gram in USD
     currentGoldPricePerGramUSD = newBasePriceTroyOunceUSD / GRAMS_PER_TROY_OUNCE;
@@ -2143,6 +2320,7 @@ makingChargesInput.addEventListener('input', calculateTotalPrice);
 taxInput.addEventListener('input', calculateTotalPrice);
 
 document.addEventListener('DOMContentLoaded', () => {
-    populateCountrySelect(); // Populate and sort on load
+    // Set initial language and translate the page
+    translatePage(currentLanguage);
     fetchRealtimeGoldPrice();
 });

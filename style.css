@@ -1,31 +1,34 @@
+/* style.css */
+
 body {
     font-family: 'Inter', sans-serif;
-    /* Apply a gradient background from the provided image colors */
     background: linear-gradient(135deg, #C1C8E4 0%, #84CEEB 50%, #5AB9EA 100%);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     margin: 0;
     padding: 20px;
     box-sizing: border-box;
+    position: relative; /* Needed for absolute positioning of menu */
+    overflow-x: hidden; /* Prevent horizontal scroll when menu is open */
 }
-/* Simple spinner animation (though not used directly for this version, kept for general style) */
+
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
 .spinner {
     border: 4px solid rgba(0, 0, 0, 0.1);
-    /* Match spinner color to one of the blues from the palette */
-    border-left-color: #5AB9EA; /* Using #5AB9EA for the spinner color */
+    border-left-color: #5AB9EA;
     border-radius: 50%;
     width: 24px;
     height: 24px;
     animation: spin 1s linear infinite;
 }
 
-/* Pulsating dot animation */
 @keyframes pulse {
     0% {
         transform: scale(0.8);
@@ -40,10 +43,95 @@ body {
         opacity: 0.7;
     }
 }
+
 .pulsating-dot {
     width: 8px;
     height: 8px;
-    background-color: #2563EB; /* A blue shade for the dot */
+    background-color: #2563EB;
     border-radius: 50%;
     animation: pulse 1.5s infinite ease-in-out;
 }
+
+/* Menu specific styles */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 250px; /* Width of the menu */
+    background-color: #fff;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(-100%); /* Hidden by default */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000; /* Ensure menu is above other content */
+    padding-top: 60px; /* Space for close button */
+}
+
+.side-menu.open {
+    transform: translateX(0); /* Show menu */
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none; /* Hidden by default */
+}
+
+.menu-overlay.active {
+    display: block; /* Show when menu is open */
+}
+
+/* Modal specific styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close-modal-btn {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal-btn:hover,
+.close-modal-btn:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+

@@ -6,11 +6,39 @@
     <title>Gold Price Calculator</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="flex items-center justify-center min-h-screen p-4">
+<body>
+
+    <!-- Hamburger Menu Icon -->
+    <div id="menuButton" class="absolute top-4 left-4 z-[1001] cursor-pointer bg-white p-3 rounded-full shadow-md text-[#5680E9] hover:bg-gray-100 transition duration-200">
+        <i class="fas fa-bars text-xl"></i>
+    </div>
+
+    <!-- Side Navigation Menu -->
+    <div id="sideMenu" class="side-menu">
+        <button id="closeMenuButton" class="absolute top-4 right-4 bg-gray-200 p-2 rounded-full text-gray-700 hover:bg-gray-300 transition duration-200">
+            <i class="fas fa-times text-lg"></i>
+        </button>
+        <nav class="flex flex-col p-4">
+            <a href="#" class="py-3 px-4 text-gray-800 hover:bg-blue-100 rounded-lg transition duration-200 text-lg font-medium" data-translate-key="home">
+                <i class="fas fa-home mr-3 text-[#5680E9]"></i> Home
+            </a>
+            <a href="#" id="langToggle" class="py-3 px-4 text-gray-800 hover:bg-blue-100 rounded-lg transition duration-200 text-lg font-medium">
+                <i class="fas fa-language mr-3 text-[#5680E9]"></i> <span id="currentLang">English</span> / Arabic
+            </a>
+            <a href="#" id="openAboutModal" class="py-3 px-4 text-gray-800 hover:bg-blue-100 rounded-lg transition duration-200 text-lg font-medium">
+                <i class="fas fa-info-circle mr-3 text-[#5680E9]"></i> About
+            </a>
+        </nav>
+    </div>
+
+    <!-- Menu Overlay -->
+    <div id="menuOverlay" class="menu-overlay"></div>
 
     <div class="bg-[#F0F5F8] p-8 rounded-xl shadow-2xl w-full max-w-md border border-[#84CEEB]">
         <!-- Icon and Gold Price Text (main title) -->
@@ -23,14 +51,14 @@
                     <path d="M12 7.343L14.485 9.828 12 12.313 9.515 9.828 12 7.343z"/>
                 </svg>
             </div>
-            <h1 class="text-3xl font-bold text-[#5680E9]">Gold Metric</h1>
+            <h1 class="text-3xl font-bold text-[#5680E9]" data-translate-key="appName">Gold Metric</h1>
         </div>
         
         <!-- Country selection and real-time gold price display (per troy ounce) -->
         <div class="mb-4">
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <div class="flex-1 w-full text-center">
-                    <label for="countrySelect" class="block text-gray-700 text-sm font-medium mb-2">Select Country:</label>
+                    <label for="countrySelect" class="block text-gray-700 text-sm font-medium mb-2" data-translate-key="selectCountry">Select Country:</label>
                     <select
                         id="countrySelect"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5680E9] focus:border-transparent appearance-none bg-white transition duration-200 shadow-sm"
@@ -41,7 +69,7 @@
 
                 <div class="flex-1 w-full text-center">
                     <div class="flex flex-col items-center justify-center bg-[#5680E9] p-3 rounded-xl shadow-inner border border-[#84CEEB] w-full min-h-[72px]">
-                        <p class="text-xs font-semibold text-white mb-1 uppercase">Gold Price</p>
+                        <p class="text-xs font-semibold text-white mb-1 uppercase" data-translate-key="goldPrice">World Gold Price Live</p>
                         <div class="flex items-center">
                             <span id="countryCurrencySymbol" class="text-2xl font-bold text-white mr-1">AED</span>
                             <span id="actualRealTimePrice" class="text-2xl font-extrabold text-white">0.00</span>
@@ -54,7 +82,7 @@
 
         <!-- Section for 24K, 22K, 21K, 18K prices per gram -->
         <div class="mt-6">
-            <h2 class="text-xl font-bold text-[#5680E9] mb-4">Gold Prices per Gram:</h2>
+            <h2 class="text-xl font-bold text-[#5680E9] mb-4" data-translate-key="goldPricesPerGram">Gold Prices per Gram:</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="bg-[#F0F5F8] p-3 rounded-lg shadow-sm border border-[#C1C8E4]">
                     <p class="text-gray-700 text-sm font-medium">24K:</p>
@@ -77,23 +105,23 @@
 
         <!-- Input fields for calculation - NOW SIDE-BY-SIDE -->
         <div class="mt-6">
-            <h2 class="text-xl font-bold text-[#5680E9] mb-4">Calculate Total Price:</h2>
+            <h2 class="text-xl font-bold text-[#5680E9] mb-4" data-translate-key="calculateTotalPrice">Calculate Total Price:</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div class="col-span-1">
-                    <label for="weightInput" class="block text-gray-700 text-sm font-medium mb-2">Weight (grams):</label>
+                    <label for="weightInput" class="block text-gray-700 text-sm font-medium mb-2" data-translate-key="weightGrams">Weight (grams):</label>
                     <input
                         type="number"
                         id="weightInput"
                         min="0"
                         step="0.01"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5680E9] focus:border-transparent transition duration-200"
-                        placeholder="Enter grams here"
+                        data-translate-placeholder-key="enterGramsPlaceholder" placeholder="Enter grams here"
                     >
-                    <p id="weightError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid positive number for weight.</p>
+                    <p id="weightError" class="text-red-500 text-xs mt-1 hidden" data-translate-key="weightError">Please enter a valid positive number for weight.</p>
                 </div>
 
                 <div class="col-span-1">
-                    <label for="karatSelect" class="block text-gray-700 text-sm font-medium mb-2">Select Karat:</label>
+                    <label for="karatSelect" class="block text-gray-700 text-sm font-medium mb-2" data-translate-key="selectKarat">Select Karat:</label>
                     <div class="flex items-center gap-2"> <!-- Flex container for dropdown and price display -->
                         <select
                             id="karatSelect"
@@ -109,7 +137,7 @@
                 </div>
 
                 <div class="col-span-1">
-                    <label for="makingChargesInput" class="block text-gray-700 text-sm font-medium mb-2">Making Charges value:</label>
+                    <label for="makingChargesInput" class="block text-gray-700 text-sm font-medium mb-2" data-translate-key="makingChargesValue">Making Charges value:</label>
                     <input
                         type="number"
                         id="makingChargesInput"
@@ -117,12 +145,12 @@
                         min="0"
                         step="0.1"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5680E9] focus:border-transparent transition duration-200"
-                        placeholder="Enter % making charges"
+                        data-translate-placeholder-key="enterMakingChargesPlaceholder" placeholder="Enter % making charges"
                     >
                 </div>
 
                 <div class="col-span-1">
-                    <label for="taxInput" class="block text-gray-700 text-sm font-medium mb-2">Tax Percentage (%):</label>
+                    <label for="taxInput" class="block text-gray-700 text-sm font-medium mb-2" data-translate-key="taxPercentage">Tax Percentage (%):</label>
                     <input
                         type="number"
                         id="taxInput"
@@ -130,36 +158,58 @@
                         min="0"
                         step="0.1"
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5680E9] focus:border-transparent transition duration-200"
-                        placeholder="Enter tax percentage"
+                        data-translate-placeholder-key="enterTaxPercentagePlaceholder" placeholder="Enter tax percentage"
                     >
                 </div>
             </div>
 
             <!-- Field for Gold Value before charges and tax -->
             <div class="mt-4 bg-[#F0F5F8] p-3 rounded-lg shadow-sm border border-[#C1C8E4] w-full">
-                <p class="text-gray-700 text-sm font-medium">Gold Value (before charges & tax):</p>
+                <p class="text-gray-700 text-sm font-medium" data-translate-key="goldValueBeforeChargesAndTax">Gold Value (before charges & tax):</p>
                 <span id="goldValueBeforeChargesAndTax" class="text-xl font-semibold text-[#5AB9EA]">$0.00</span>
             </div>
 
             <!-- New field for Making Charges Amount -->
             <div class="mt-4 bg-[#F0F5F8] p-3 rounded-lg shadow-sm border border-[#C1C8E4] w-full">
-                <p class="text-gray-700 text-sm font-medium">Making Charges Amount:</p>
+                <p class="text-gray-700 text-sm font-medium" data-translate-key="makingChargesAmount">Making Charges Amount:</p>
                 <span id="makingChargesAmountDisplay" class="text-xl font-semibold text-[#5AB9EA]">$0.00</span>
             </div>
 
             <!-- New field for Tax Amount -->
             <div class="mt-4 bg-[#F0F5F8] p-3 rounded-lg shadow-sm border border-[#C1C8E4] w-full">
-                <p class="text-gray-700 text-sm font-medium">Tax Amount:</p>
+                <p class="text-gray-700 text-sm font-medium" data-translate-key="taxAmount">Tax Amount:</p>
                 <span id="taxAmountDisplay" class="text-xl font-semibold text-[#5AB9EA]">$0.00</span>
             </div>
         </div>
 
         <!-- Estimated Total Value Display -->
         <div class="bg-[#5AB9EA] p-4 rounded-lg text-center shadow-inner mt-6">
-            <p class="text-white text-md mb-2">Estimated Total Value:</p>
+            <p class="text-white text-md mb-2" data-translate-key="estimatedTotalValue">Estimated Total Value:</p>
             <p id="totalValueDisplay" class="text-4xl font-extrabold text-white">$0.00</p>
         </div>
 
+    </div>
+
+    <!-- Copyright Notice -->
+    <div id="copyrightNotice" class="text-center text-gray-700 text-sm mt-auto mb-4 w-full">
+        &copy; 2025 Gold Metric. All rights reserved.
+    </div>
+
+    <!-- About Modal -->
+    <div id="aboutModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal-btn" id="closeAboutModal">&times;</span>
+            <div class="text-center">
+                <h2 class="text-lg font-bold mb-2 text-[#5680E9]" data-translate-key="aboutApp">About the App</h2>
+                <p class="text-gray-700" data-translate-key="aboutDescription">Gold Metric is a tool to accurately and easily calculate gold prices, supporting multiple countries and karats, and providing options for taxes and making charges.</p>
+
+                <div class="mt-4 text-left">
+                    <p class="text-gray-700" data-translate-key="versionInfo"></p>
+                    <p class="text-gray-700" data-translate-key="developerInfo"></p>
+                    <p class="text-gray-700" data-translate-key="emailInfo"></p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Link to external JavaScript file -->
